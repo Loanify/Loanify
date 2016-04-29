@@ -6,13 +6,13 @@ https://github.com/Loanify/Loanify
 ##Trello
 https://trello.com/b/M9OykCOz/loanify#
 
-* A README.md file with:
-    * Explanations of the technologies used (including outside APIs).
-    * A couple paragraphs about the general approach you took.
-    * Installation instructions for the app.
-    * Link to your PUBLICLY ACCESSIBLE Trello board.
-    * Links to your planning docs, including data models, wireframes, and interview notes.
-    * Descriptions of any unsolved problems or major hurdles your team had to overcome.
+#A README.md file with:
+* Explanations of the technologies used (including outside APIs).
+* A couple paragraphs about the general approach you took.
+* Installation instructions for the app.
+* Link to your PUBLICLY ACCESSIBLE Trello board.
+* Links to your planning docs, including data models, wireframes, and interview notes.
+* Descriptions of any unsolved problems or major hurdles your team had to overcome.
 
 * Technologies used
     * Node.js
