@@ -14,7 +14,7 @@ https://trello.com/b/M9OykCOz/loanify#
     * Links to your planning docs, including data models, wireframes, and interview notes.
     * Descriptions of any unsolved problems or major hurdles your team had to overcome.
 
-* Technologies used
+#Technologies used
     * Node.js
     * Express
     * 
