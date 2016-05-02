@@ -12,13 +12,15 @@ var User = require('./models/user');
 var session = require('express-session');
 var flash    = require('connect-flash');
 
-passport.use(new LocalStrategy(
-  function(username, password, cb) {
+passport.use('local', new LocalStrategy(
+  function(username, password, done) {
     User.findOne({username: username}, function(err, user) {
-      if (err) { return cb(err); }
-      if (!user) { return cb(null, false); }
-      if (user.password != password) { return cb(null, false); }
-      return cb(null, user);
+      if (err) { return done(err); }
+      if (!user) { return done(null, false); }
+      console.log('user exists')
+      if (!user.validatePassword(password)) { return done(null, false); }
+      console.log('no errors!')
+      return done(null, user);
     });
   }));
 
