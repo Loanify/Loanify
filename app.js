@@ -1,18 +1,16 @@
 var express= require('express');
-var logger = require('morgan')
+var logger = require('morgan');
 var app = express();
-var port = process.env.PORT || 3000
-var bodyParser = require('body-parser')
-var cookieParser = require('cookie-parser')
-var db = require('./db.js')
+var port = process.env.PORT || 3000;
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var db = require('./db.js');
 var router = express.Router();
-var passport = require('passport')
+var passport = require('passport');
 var User = require('./models/user');
 var session = require('express-session');
 var flash    = require('connect-flash');
 var router = require('./routes/user_routes')
-
-
 
 //Configure view engine to render EJS templates
 app.set('views', __dirname + '/views');
@@ -31,21 +29,6 @@ app.use(flash());
 
 app.use('/', router)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app.listen(port, function(){
-  console.log("Listening on port " + port)
-})
+  console.log("Listening on port " + port);
+});
