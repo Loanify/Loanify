@@ -1,12 +1,12 @@
 var express= require('express');
-var logger = require('morgan')
+var logger = require('morgan');
 var app = express();
-var port = process.env.PORT || 3000
-var bodyParser = require('body-parser')
-var cookieParser = require('cookie-parser')
-var db = require('./db.js')
+var port = process.env.PORT || 3000;
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var db = require('./db.js');
 var router = express.Router();
-var passport = require('passport')
+var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('./models/user');
 var session = require('express-session');
@@ -17,9 +17,9 @@ passport.use('local', new LocalStrategy(
     User.findOne({username: username}, function(err, user) {
       if (err) { return done(err); }
       if (!user) { return done(null, false); }
-      console.log('user exists')
+      console.log('user exists');
       if (!user.validatePassword(password)) { return done(null, false); }
-      console.log('no errors!')
+      console.log('no errors!');
       return done(null, user);
     });
   }));
@@ -91,7 +91,7 @@ app.post('/login',
   });
 });
 
-app.get('/profile',
+app.get('/index',
   require('connect-ensure-login').ensureLoggedIn(),
   function(req, res){
     res.render('profile', {user: req.user})
