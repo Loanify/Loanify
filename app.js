@@ -10,7 +10,7 @@ var passport = require('passport')
 var User = require('./models/user');
 var session = require('express-session');
 var flash    = require('connect-flash');
-var router = require('./routes/routes')
+var router = require('./routes/user_routes')
 
 
 
