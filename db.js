@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/practice_passport', function(err){
+mongoose.connect('mongodb://localhost:27017/Loanify', function(err){
   if (err){
     console.log("Cannot connect to database", err);
 
   }else{
-    console.log('Databse connected.')
+    console.log('Database connected.')
   }
   var db = mongoose.connection;
 })
