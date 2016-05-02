@@ -64,7 +64,7 @@ app.post('/login',
   passport.authenticate('local', { failureRedirect: '/login' }),
   function(req, res) {
     console.log('Success')
-    res.redirect('/');
+    res.redirect('/profile');
   });
 
 
@@ -91,7 +91,12 @@ app.post('/login',
   });
 });
 
+app.get('/profile',
+  require('connect-ensure-login').ensureLoggedIn(),
+  function(req, res){
+    res.render('profile', {user: req.user})
 
+});
 
 
 
