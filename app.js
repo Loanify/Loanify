@@ -72,23 +72,37 @@ app.post('/login',
 //passport register
 
 app.post('/register', function(req, res) {
-  // attach POST to user schema
-  var user = new User({  password: req.body.password, username: req.body.username });
-  // save in Mongo
+
+
+  var body = req.body;
+
+  var user = new User();
+
+  user.username = body.username;
+  user.password = user.encrypt(body.password);
+
   user.save(function(err) {
-    if(err) {
-      console.log(err);
-    } else {
-      console.log('user: ' + user + " saved.");
-      req.login(user, function(err) {
+    if (err) throw err;
+    // res.json({ message: 'User created successfully!', results: user });
+    req.login(user, function(err) {
         if (err) {
           console.log(err);
         }
-        return res.redirect('/profile');
+        res.redirect('/profile');
       });
-    }
   });
 });
+
+
+//   // attach POST to user schema
+//   var user = new User({  username: req.body.username, password: req.body.password });
+//   // save in Mongo
+//   user.save(function(err) {
+//     if(err) {
+//       console.log(err);
+//     } else {
+//       console.log('user: ' + user + " saved.");
+//     }
  app.get('/register', function(req, res) {
       res.render('register');
   });
