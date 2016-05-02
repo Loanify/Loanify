@@ -52,8 +52,8 @@ app.use(flash());
 
 
 //Routes
-app.get('/', function(req, res){
-  res.json({message: 'Hello'});
+app.get('/', function(req, res) {
+  res.render('home', { user: req.user });
 });
 
 //passport Login
