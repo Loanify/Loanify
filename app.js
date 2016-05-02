@@ -70,26 +70,30 @@ app.post('/login',
 
 
 //passport register
+
+app.post('/register', function(req, res) {
+  // attach POST to user schema
+  var user = new User({  password: req.body.password, username: req.body.username });
+  // save in Mongo
+  user.save(function(err) {
+    if(err) {
+      console.log(err);
+    } else {
+      console.log('user: ' + user + " saved.");
+      req.login(user, function(err) {
+        if (err) {
+          console.log(err);
+        }
+        return res.redirect('/profile');
+      });
+    }
+  });
+});
  app.get('/register', function(req, res) {
       res.render('register');
   });
 
-  app.post('/register', function(req, res) {
 
-    var body = req.body;
-
-    var user = new User();
-
-    user.username = body.username;
-    user.password = user.encrypt(body.password);
-
-    user.save(function(err) {
-    if (err) throw err;
-    console.log("user created")
-    // res.redirect('/')
-    res.json({ message: 'User created successfully!', results: user });
-  });
-});
 
 app.get('/profile',
   require('connect-ensure-login').ensureLoggedIn(),
