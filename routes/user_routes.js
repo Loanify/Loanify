@@ -42,8 +42,8 @@ router.get('/login', function(req, res) {
 router.post('/login',
   passport.authenticate('local', { failureRedirect: '/login' }),
   function(req, res) {
-    console.log('Success')
-    res.redirect('/profile');
+    console.log('Success');
+    res.redirect('/index');
   });
 
 
@@ -67,7 +67,7 @@ router.post('/register', function(req, res) {
         if (err) {
           console.log(err);
         }
-        res.redirect('/profile');
+        res.redirect('/index');
       });
   });
 });
@@ -88,10 +88,10 @@ router.post('/register', function(req, res) {
 
 
 
-router.get('/profile',
+router.get('/index',
   require('connect-ensure-login').ensureLoggedIn(),
   function(req, res){
-    res.render('profile', {user: req.user})
+    res.render('index', {user: req.user});
 
 });
 
