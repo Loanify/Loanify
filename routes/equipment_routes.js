@@ -5,7 +5,10 @@ console.log(equipmentController);
 
 //posts urls inputs to our model
 router.route('/index')
-  .get(equipmentController.index)
+  .get(equipmentController.index);
+
+router.route('/new')
+  .get(equipmentController.new)
   .post(equipmentController.create);
 
 // router.route('/:id')
