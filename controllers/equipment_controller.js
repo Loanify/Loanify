@@ -10,7 +10,11 @@ controller.index = function(req, res) {
   });
 };
 
-controller.show = function(){
+controller.show = function() {
+};
+
+controller.new = function(req, res) {
+  res.render('new');
 };
 
 controller.create = function(req, res) {
