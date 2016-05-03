@@ -4,7 +4,7 @@ var equipmentSchema = new mongoose.Schema({
   itemTitle     : String,
   serialNumber  : String,
   description   : String,
-  public        : { type: Boolean, default: false }
+  availability  : { type: Boolean, default: true }
 });
 
 var Equipment = mongoose.model('Equipment', equipmentSchema);
