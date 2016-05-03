@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var person = require('./models/person.js');
+var Person = require('../models/person.js');
 
 var equipmentSchema = new mongoose.Schema({
   itemTitle     : String,

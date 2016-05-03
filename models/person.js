@@ -14,6 +14,6 @@ var personSchema = new mongoose.Schema({
 //   comment       : String
 // });
 
-var Person = mongoose.model('Person', checkoutSchema);
+var Person = mongoose.model('Person', personSchema);
 
 module.exports = Person;

@@ -12,8 +12,11 @@ router.route('/person/new')
   .post(personController.create);
 
 // router.route('/:id')
-//   .get(linksController.show)
+//   .get(personController.show)
 //   .patch(linksController.update);
-
+router.get('/show', function(req, res) {
+  res.render('show');
+});
+  // personController.show);
 
 module.exports = router;
