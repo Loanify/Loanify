@@ -8,8 +8,7 @@ console.log(equipmentController);
 router.route('/index')
   .get(equipmentController.index);
 
-router.route('/new')
-  .get(equipmentController.new)
+router.route('/index')
   .post(equipmentController.create);
 
 

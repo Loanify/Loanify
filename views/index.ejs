@@ -3,6 +3,7 @@
 <head>
   <title>Equipment List</title>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +22,7 @@
 
 
   <h1>Equipment</h1>
-  <a href="/api/equipment/new">Add New Equipment here!</a>
+  <!-- <a href="/api/equipment/new">Add New Equipment here!</a> -->
   <table class="table table-hover">
       <thead>
           <tr>
@@ -35,10 +36,10 @@
 
       <tbody>
         <tr>
-          <div id="itemTitleHere"></div>
-          <div id="serialNumberHere"></div>
+          <div id="entry"></div>
+          <!-- <div id="serialNumberHere"></div>
           <div id="descriptionHere"></div>
-          <div id="availabilityHere"></div>
+          <div id="availabilityHere"></div> -->
             <td class="btn btn-success btn-xs">Show Item</td>
             <td class="btn btn-warning btn-xs">Edit Item</td>
             <td class="btn btn-danger btn-xs">Edit Item</td>
@@ -48,7 +49,6 @@
 
 
 </div>
-<% } %>
 <div class="container">
 
 <h1> Input New Equipment </h1>
@@ -59,14 +59,14 @@
     <div class="form-group row">
       <label for="itemTitleLabel" class="col-sm-2 form-control-label">Item Title</label>
       <div class="col-sm-8">
-        <input type="itemTitleInput" class="form-control" id="itemTitle" placeholder="Item Title">
+        <input type="text" class="form-control" id="itemTitle" placeholder="Item Title">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="serialNumberLabel" class="col-sm-2 form-control-label">Serial Number</label>
       <div class="col-sm-8">
-        <input type="password" class="form-control" id="serial" placeholder="Serial Number">
+        <input  type="text" class="form-control" id="serial" placeholder="Serial Number">
       </div>
     </div>
 
@@ -74,7 +74,7 @@
       <label for="descriptionLabel" class="col-sm-2 form-control-label">Description</label>
       <div class="col-sm-8">
 <!--         <input type="field" class="form-control" id="descInput" placeholder="Description">
- -->  <textarea class="form-control" rows="3"></textarea>
+ -->  <textarea type="text" class="form-control" rows="3" id="desc"></textarea>
       </div>
     </div>
 
@@ -86,8 +86,8 @@
 
   </form>
 </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="./public/js/main.js"></script>
+<% } %>
+  <script src="/js/main.js"></script>
 </body>
 </html>
 

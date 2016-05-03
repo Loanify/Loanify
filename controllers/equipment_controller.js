@@ -3,9 +3,9 @@ var controller = {};
 
 controller.index = function(req, res) {
   Equipment.find({}, function(err, equipment) {
-    if (err) {
-      throw err;
-    }
+    if (err) console.log(err);
+
+
     res.json(equipment);
   });
 };
@@ -19,9 +19,9 @@ controller.new = function(req, res) {
 
 controller.create = function(req, res) {
   var equipment = new Equipment();
-  equipment.title = req.body.itemTitle;
-  equipment.serial = req.body.serialNumber;
-  equipment.desc = req.body.description;
+  equipment.itemTitle = req.body.itemTitle;
+  equipment.serialNumber = req.body.serialNumber;
+  equipment.description = req.body.description;
   equipment.loanedTo = req.body.loanedTo;
   equipment.available = req.body.available;
   equipment.save(function(err) {
@@ -29,6 +29,7 @@ controller.create = function(req, res) {
       throw err;
     }
     res.json(equipment);
+    console.log('equipment saved');
   });
 };
 
@@ -37,3 +38,13 @@ controller.update = function(req, res) {
 };
 
 module.exports = controller;
+
+//different approach, josh's code
+function userposts (req, res) {
+    var userID = req.user._id
+    console.log(req.user._id)
+    Post.find({user: userID}, function(error, posts) {
+        if(error) throw error
+        res.render('userposts.ejs', {posts: posts});
+    })
+}

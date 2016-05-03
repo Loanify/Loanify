@@ -14,14 +14,13 @@ var router = require('./routes/user_routes');
 var equipment_routes = require('./routes/equipment_routes');
 var person_routes = require('./routes/person_routes');
 
-
 //Configure view engine to render EJS templates
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-// app.use(express.static(__dirname + '/public'));
 
 
 //Middleware
+app.use(express.static(__dirname + '/public'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
