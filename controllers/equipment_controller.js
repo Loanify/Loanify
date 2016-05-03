@@ -38,13 +38,3 @@ controller.update = function(req, res) {
 };
 
 module.exports = controller;
-
-//different approach, josh's code
-function userposts (req, res) {
-    var userID = req.user._id
-    console.log(req.user._id)
-    Post.find({user: userID}, function(error, posts) {
-        if(error) throw error
-        res.render('userposts.ejs', {posts: posts});
-    })
-}
