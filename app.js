@@ -12,7 +12,8 @@ var session = require('express-session');
 var flash    = require('connect-flash');
 var router = require('./routes/user_routes');
 var equipment_routes = require('./routes/equipment_routes');
-// var main_js = require('/public/js/main');
+var person_routes = require('./routes/person_routes');
+
 
 //Configure view engine to render EJS templates
 app.set('views', __dirname + '/views');
@@ -32,6 +33,8 @@ app.use(flash());
 
 app.use('/', router);
 app.use('/equipment', equipment_routes);
+app.use('/', person_routes);
+
 
 app.listen(port, function(){
   console.log("Listening on port " + port);
