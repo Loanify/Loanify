@@ -29,7 +29,7 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash());
 
 app.use('/', router);
-app.use('/equipment', equipment_routes);
+app.use('/api/equipment', equipment_routes);
 
 app.listen(port, function(){
   console.log("Listening on port " + port);

@@ -18,11 +18,11 @@ controller.create = function(req, res) {
   equipment.title = req.body.itemTitle;
   equipment.serial = req.body.serialNumber;
   equipment.desc = req.body.description;
-  link.save(function(err) {
+  equipment.save(function(err) {
     if (err) {
       throw err;
     }
-    res.json(link);
+    res.json(equipment);
   });
 };
 

@@ -1,14 +1,51 @@
-<% if (!user) { %>
-  <p>Welcome! Please <a href="/login">log in</a>.</p>
-<% } else { %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Equipment List</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container">
+
+  <h1>INDEX VIEW</h1>
+  Username: <%= user.username %><br/>
+  <a href="/logout">Logout</a>
+
+
+  <h1>Equipment</h1>
+  <table class="table table-hover">
+      <thead>
+          <tr>
+          <th>Item Title</th>
+          <th>Serial</th>
+          <th>Description</th>
+          <th>Availability</th>
+          <th colspan="3"></th>
+          </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Item title</td>
+          <td>Serial</td>
+          <td>Description</td>
+          <td>Availability</td>
+          <td class="btn btn-success btn-xs">Show Item</td>
+          <td class="btn btn-warning btn-xs">Edit Item</td>
+          <td class="btn btn-danger btn-xs">Edit Item</td>
+        </tr>
+      </tbody>
+  </table>
 
 
 
-<h1>INDEX VIEW</h1>
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="./public/js/main.js"></script> -->
+</body>
+</html>
 
-Username: <%= user.username %><br/>
 
 
-<a href="/logout">Logout</a>
-
-<% } %>
