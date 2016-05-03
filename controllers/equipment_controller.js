@@ -19,9 +19,9 @@ controller.new = function(req, res) {
 
 controller.create = function(req, res) {
   var equipment = new Equipment();
-  equipment.title = req.body.itemTitle;
-  equipment.serial = req.body.serialNumber;
-  equipment.desc = req.body.description;
+  equipment.itemTitle = req.body.itemTitle;
+  equipment.serialNumber = req.body.serialNumber;
+  equipment.description = req.body.description;
   equipment.loanedTo = req.body.loanedTo;
   equipment.available = req.body.available;
   equipment.save(function(err) {
