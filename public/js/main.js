@@ -1,12 +1,12 @@
  $( document ).ready();
  console.log("hello");
 
- $('#submitBtn').click(function() {
-  console.log('button clicked');
-   equipmentPost($('#itemTitle').val());
-   equipmentPost($('#serial').val());
-   equipmentPost($('#desc').val());
-});
+//  $('#submitBtn').click(function() {
+//   console.log('button clicked');
+//    // equipmentPost($('#itemTitle').val());
+//    // equipmentPost($('#serial').val());
+//    // equipmentPost($('#desc').val());
+// });
 
 var entry = $('#entry');
 // var serialNumberHere = $('#serialNumberHere');
@@ -18,7 +18,11 @@ function equipmentPost(inputValue) {
 $.ajax({
   method: 'POST',
   url: '/equipment/index',
-  data: { url: inputValue }
+  data: {
+    itemTitle: $('#itemTitle').val(),
+    serialNumber: $('#serialNumber').val(),
+    description: $('#desc').val(),
+     }
 }).done(function( data ) {
     console.log( data );
     entry.append($('<td>' + data.itemTitle + data.serialNumber + data.description + data.availability +'</td>'));
