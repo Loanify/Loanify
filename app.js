@@ -12,6 +12,7 @@ var session = require('express-session');
 var flash    = require('connect-flash');
 var router = require('./routes/user_routes');
 var equipment_routes = require('./routes/equipment_routes');
+var people_routes = require('./routes/people_routes');
 
 //Configure view engine to render EJS templates
 app.set('views', __dirname + '/views');
@@ -29,7 +30,8 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash());
 
 app.use('/', router);
-app.use('/api/equipment', equipment_routes);
+app.use('/equipment', equipment_routes);
+app.use('/', people_routes);
 
 app.listen(port, function(){
   console.log("Listening on port " + port);

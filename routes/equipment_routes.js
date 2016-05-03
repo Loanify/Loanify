@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+
 var equipmentController = require('../controllers/equipment_controller.js');
 console.log(equipmentController);
 
@@ -10,6 +11,8 @@ router.route('/index')
 router.route('/new')
   .get(equipmentController.new)
   .post(equipmentController.create);
+
+
 
 // router.route('/:id')
 //   .get(linksController.show)
