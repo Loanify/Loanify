@@ -22,6 +22,8 @@ controller.create = function(req, res) {
   equipment.title = req.body.itemTitle;
   equipment.serial = req.body.serialNumber;
   equipment.desc = req.body.description;
+  equipment.loanedTo = req.body.loanedTo;
+  equipment.available = req.body.available;
   equipment.save(function(err) {
     if (err) {
       throw err;
