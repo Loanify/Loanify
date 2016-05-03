@@ -7,6 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<% if (!user) { %>
+  <p>Welcome!, Please <a href="/login">log in</a></p>
+
+<% } else { %>
+
 <div class="container">
 
   <h1>INDEX VIEW</h1>
@@ -42,6 +47,7 @@
 
 
 </div>
+<% } %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <!-- <script type="text/javascript" src="./public/js/main.js"></script> -->
 </body>
