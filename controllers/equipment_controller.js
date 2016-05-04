@@ -10,7 +10,18 @@ controller.index = function(req, res) {
   });
 };
 
-controller.show = function() {
+controller.show = function(req, res) {
+  var id = req.params.id;
+  Equipment.findById(id, function(err, equipment) {
+    if (err) {
+      throw err;
+    }
+    if (equipment.available) {
+      res.render('checkout_form', {equipment: equipment});
+    } else {
+      res.render('show', {equipment: equipment});
+    }
+  });
 };
 
 controller.new = function(req, res) {
@@ -52,6 +63,15 @@ controller.destroy = function(req, res){
 
 
 controller.update = function(req, res) {
+  var id = req.params.id;
+  // TODO update person information
+  // get info from req.body
+  Equipment.findOneAndUpdate({_id: id}, {available: false}, function(err, equipment) {
+    if (err) {
+      throw err;
+    }
+      res.redirect('/index');
+  });
 };
 
 module.exports = controller;
