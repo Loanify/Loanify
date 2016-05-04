@@ -5,7 +5,7 @@ var personSchema = new mongoose.Schema({
   lastName      : String,
   item          : String,
   email         : String,
-  comment       : String,
+  comments       : String,
   timeCheckedOut: { type : Date, default: Date.now }
 });
 
