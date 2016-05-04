@@ -6,9 +6,11 @@ var equipmentSchema = new mongoose.Schema({
   serialNumber  : String,
   description   : String,
   loanedTo      : [ Person.schema ],
-  available     : { type: Boolean, default: false }
+  available     : { type: Boolean, default: true }
 });
 
 var Equipment = mongoose.model('Equipment', equipmentSchema);
+
+// equipment.loadOTo(person);
 
 module.exports = Equipment;

@@ -9,13 +9,15 @@ router.route('/index')
   .get(equipmentController.index);
 
 router.route('/new')
-  .get(equipmentController.new)
+  .get(equipmentController.new);
 
 router.route('/')
   .post(equipmentController.create);
 
 router.route('/:id')
-  .delete(equipmentController.destroy);
+  .delete(equipmentController.destroy)
+  .get(equipmentController.show)
+  .post(equipmentController.update);
 
 
 

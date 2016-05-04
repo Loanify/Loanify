@@ -11,7 +11,12 @@ $.ajax({
     tr.append($('<td>').text(equipment.serialNumber));
     tr.append($('<td>').text(equipment.description));
     tr.append($('<td>').text(equipment.available));
-    tr.append($('<td>').text('Show item').addClass('btn btn-success btn-xs'));
+    var a = $('<a>').text('Show Item').attr( 'href', '/equipment/' + equipment._id);
+    tr.append($('<td>').append(a).addClass('btn btn-success btn-xs'));
+    // <td>show item</td>
+    // make an anchor tag, set the text and href for it
+    // append that to the td
+
     tr.append($('<td>').text('Edit item').addClass('btn btn-warning btn-xs'));
     var $deletebutton = $('<td>').text('Delete').addClass('btn btn-danger btn-xs');
     tr.append($deletebutton);
@@ -32,6 +37,8 @@ $.ajax({
 });
 
 
+
+// <td><a href="/equipment/2343">Show Item</a></td>
 
 // target the button
 // put an event listener on the button
