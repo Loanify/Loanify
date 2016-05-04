@@ -1,0 +1,29 @@
+<!-- basic table example (syntax may bot be 100%) -->
+  <h1>Equipment</h1>
+  <a href="/equipment/new">Add New Equipment here!</a>
+  <table class="table table-hover">
+    <caption>Example</caption>
+    <thead>
+       <tr>
+          <th>Item Title</th>
+          <th>Serial</th>
+          <th>Description</th>
+          <th>Availability</th>
+          <th colspan="3"></th>
+          </tr>
+    </thead>
+    <tbody>
+      <% equipment.forEach(equipment, function() { %>
+      <tr>
+        <td><%= equipment.itemTitle %></td>
+        <td><%= equipment.availabile %></td>
+        <td><%= equipment.availabile %></td>
+        <td><%= equipment.availabile %></td>
+        <td><%= equipment.availabile %></td>
+        <td class="btn btn-success btn-xs">Show Item</td>
+        <td class="btn btn-warning btn-xs">Edit Item</td>
+        <td class="btn btn-danger btn-xs">Edit Item</td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>

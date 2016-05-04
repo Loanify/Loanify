@@ -3,8 +3,10 @@ $.ajax({
   })
 .done(function(data) {
   data.forEach(function(equipment) {
-    $('#printer').append('<li>' + equipment.itemTitle + '</li>');
-  });
+      $('#itemTitle').append('<li>' + equipment.itemTitle + '</li>');
+      $('#serialNumber').append('<li>' + equipment.serialNumber + '</li>');
+      $('#description').append('<li>' + equipment.description + '</li>');
+      $('#available').append('<li>' + equipment.available + '</li>');  });
 });
 
 
@@ -16,7 +18,10 @@ $('#submit1').on('click', function() {
     method: 'POST',
     data: {itemTitle: val},
     success: function(equipment) {
-      $('#printer').append('<li>' + equipment.itemTitle + '</li>');
+      $('#itemTitle').append('<li>' + equipment.itemTitle + '</li>');
+      $('#serialNumber').append('<li>' + equipment.serialNumber + '</li>');
+      $('#description').append('<li>' + equipment.description + '</li>');
+      $('#available').append('<li>' + equipment.available + '</li>');
     }
   });
 });
