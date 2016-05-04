@@ -5,14 +5,9 @@ var personSchema = new mongoose.Schema({
   lastName      : String,
   item          : String,
   email         : String,
-  comment       : String
+  comment       : String,
+  timeCheckedOut: { type : Date, default: Date.now }
 });
-// var checkoutSchema = new mongoose.Schema({
-//   firstName     : String,
-//   lastName      : String,
-//   email         : String,
-//   comment       : String
-// });
 
 var Person = mongoose.model('Person', personSchema);
 
