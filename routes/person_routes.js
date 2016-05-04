@@ -17,6 +17,10 @@ router.route('/person/new')
 router.get('/show', function(req, res) {
   res.render('show');
 });
+
+router.route('/show')
+  .post(personController.checkIn)
+
   // personController.show);
 
 module.exports = router;

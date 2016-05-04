@@ -11,6 +11,8 @@ var equipmentSchema = new mongoose.Schema({
 
 var Equipment = mongoose.model('Equipment', equipmentSchema);
 
+
+
 // equipment.loadOTo(person);
 
 module.exports = Equipment;
