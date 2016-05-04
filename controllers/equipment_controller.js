@@ -27,6 +27,7 @@ controller.create = function(req, res) {
     available: req.body.available
   });
 
+
   equipment.save(function(err) {
     if (err) throw err;
     res.json(equipment);

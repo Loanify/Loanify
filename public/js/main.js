@@ -1,3 +1,4 @@
+
 $.ajax({
   url: '/equipment/index'
   })
@@ -33,3 +34,4 @@ $('#submit1').on('click', function() {
 //   loanedTo      : [ Person.schema ],
 //   available     : { type: Boolean, default: false }
 // });
+
