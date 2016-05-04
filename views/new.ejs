@@ -13,33 +13,36 @@
 <h1> Input New Equipment </h1>
 <br>
 
-  <form>
+  <form action="/equipment/new" method="post">
 
     <div class="form-group row">
       <label for="itemTitleLabel" class="col-sm-2 form-control-label">Item Title</label>
       <div class="col-sm-8">
-        <input type="itemTitleInput" class="form-control" id="itemTitle" placeholder="Item Title">
+        <input type="itemTitleInput" class="form-control" name="itemTitle" id="itemTitle" placeholder="Item Title">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="serialNumberLabel" class="col-sm-2 form-control-label">Serial Number</label>
       <div class="col-sm-8">
-        <input type="password" class="form-control" id="serial" placeholder="Serial Number">
+        <input type="text" class="form-control" name="serialNumber" id="serial" placeholder="Serial Number">
       </div>
     </div>
 
      <div class="form-group row">
       <label for="descriptionLabel" class="col-sm-2 form-control-label">Description</label>
       <div class="col-sm-8">
-<!--         <input type="field" class="form-control" id="descInput" placeholder="Description">
- -->  <textarea class="form-control" rows="3"></textarea>
+      <textarea class="form-control" rows="3" name="description"></textarea>
       </div>
     </div>
 
     <div class="form-group row">
       <div class="col-sm-offset-2 col-sm-10">
+<<<<<<< HEAD
         <button type="submit" class="btn btn-secondary" id="submit1">Check Out!</button>
+=======
+        <button type="submit" class="btn btn-secondary" id="submit1">Add New Equipment</button>
+>>>>>>> master
       </div>
     </div>
 
