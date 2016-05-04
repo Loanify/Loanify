@@ -30,7 +30,7 @@ controller.create = function(req, res) {
 
   equipment.save(function(err) {
     if (err) throw err;
-    res.json(equipment);
+    res.redirect('/index');
   });
 };
 
