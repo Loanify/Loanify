@@ -10,6 +10,8 @@ router.route('/index')
 
 router.route('/new')
   .get(equipmentController.new)
+
+router.route('/')
   .post(equipmentController.create);
 
 

@@ -4,34 +4,30 @@ $.ajax({
   })
 .done(function(data) {
   data.forEach(function(equipment) {
-      $('#itemTitle').append('<li>' + equipment.itemTitle + '</li>');
-      $('#serialNumber').append('<li>' + equipment.serialNumber + '</li>');
-      $('#description').append('<li>' + equipment.description + '</li>');
-      $('#available').append('<li>' + equipment.available + '</li>');  });
+
+
+    var tr = $('<tr>');
+    tr.append( $('<td>').text(equipment.itemTitle) );
+    tr.append($('<td>').text(equipment.serialNumber));
+    tr.append($('<td>').text(equipment.description));
+    tr.append($('<td>').text(equipment.available));
+    tr.append($('<td>').text('Show item').addClass('btn btn-success btn-xs'));
+    tr.append($('<td>').text('Edit item').addClass('btn btn-warning btn-xs'));
+    tr.append($('<td>').text('Delete').addClass('btn btn-danger btn-xs'));
+  $('tbody').append(tr);
+  })
 });
 
 
-$('#submit1').on('click', function() {
-  var val = $('#itemTitle').val();
 
-  $.ajax({
-    url: '/equipment/new',
-    method: 'POST',
-    data: {itemTitle: val},
-    success: function(equipment) {
-      $('#itemTitle').append('<li>' + equipment.itemTitle + '</li>');
-      $('#serialNumber').append('<li>' + equipment.serialNumber + '</li>');
-      $('#description').append('<li>' + equipment.description + '</li>');
-      $('#available').append('<li>' + equipment.available + '</li>');
-    }
-  });
-});
 
-// var equipmentSchema = new mongoose.Schema({
-//   itemTitle     : String,
-//   serialNumber  : String,
-//   description   : String,
-//   loanedTo      : [ Person.schema ],
-//   available     : { type: Boolean, default: false }
-// });
 
+// <tr>
+//   <td id="itemTitle">Item title</td>
+//   <td id="serialNumber">Serial</td>
+//   <td id="description">Description</td>
+//   <td id="available">Availability</td>
+//   <td class="btn btn-success btn-xs">Show Item</td>
+//   <td class="btn btn-warning btn-xs">Edit Item</td>
+//   <td class="btn btn-danger btn-xs">Edit Item</td>
+// </tr>
