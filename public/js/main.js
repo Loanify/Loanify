@@ -13,10 +13,33 @@ $.ajax({
     tr.append($('<td>').text(equipment.available));
     tr.append($('<td>').text('Show item').addClass('btn btn-success btn-xs'));
     tr.append($('<td>').text('Edit item').addClass('btn btn-warning btn-xs'));
-    tr.append($('<td>').text('Delete').addClass('btn btn-danger btn-xs'));
+    var $deletebutton = $('<td>').text('Delete').addClass('btn btn-danger btn-xs');
+    tr.append($deletebutton);
+    $deletebutton.on('click', function(){
+      console.log(equipment._id + "clicked")
+      $.ajax({
+        url: '/equipment/' + equipment._id,
+        method: 'DELETE',
+        success: function(){
+          console.log("deleted")
+          tr.remove();
+        }
+      })
+
+    })
   $('tbody').append(tr);
   })
 });
+
+
+
+// target the button
+// put an event listener on the button
+// prove it works
+// get a particular id for the button to delete
+// $('.btn-danger').on('click', function(){
+//   console.log("delete clicked")
+// })
 
 
 
