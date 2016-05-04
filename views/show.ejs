@@ -2,8 +2,19 @@
 <html>
 <head>
   <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  <div class="container">
+  <h1><%= equipment.itemTitle %></h1>
+
+  <p>Serial Number: <%= equipment.serialNumber %></p>
+  <p>Loaned to: <%= equipment.loanedTo %></p>
+  <p>Checked out at: <%= person.timeCheckedOut %></p>
+</div>
 
 </body>
 </html>

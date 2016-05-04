@@ -52,12 +52,4 @@ $.ajax({
 
 
 
-// <tr>
-//   <td id="itemTitle">Item title</td>
-//   <td id="serialNumber">Serial</td>
-//   <td id="description">Description</td>
-//   <td id="available">Availability</td>
-//   <td class="btn btn-success btn-xs">Show Item</td>
-//   <td class="btn btn-warning btn-xs">Edit Item</td>
-//   <td class="btn btn-danger btn-xs">Edit Item</td>
-// </tr>
+
