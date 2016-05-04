@@ -14,6 +14,9 @@ router.route('/new')
 router.route('/')
   .post(equipmentController.create);
 
+router.route('/:id')
+  .delete(equipmentController.destroy);
+
 
 
 // router.route('/:id')

@@ -34,32 +34,25 @@ controller.create = function(req, res) {
   });
 };
 
-// controller.create = function(req, res) {
+controller.destroy = function(req, res){
+  var id = req.params.id;
+  console.log(req.body, req.params);
+  Equipment.findOneAndRemove({_id: id}, function(err, doc, result){
+    if (err){
+      console.log(err);
+    }
+    console.log(err, doc, result);
+    res.json({status: "deleted"})
+  });
+  //find equipment to delete via ID
+  //delete item
+  //send back confirmation as JSON
+}
 
-//   var equipment = new Equipment();
-//     equipment.itemTitle = req.body.itemTitle;
-//     equipment.serialNumber = req.body.serialNumber;
-//     equipment.description = req.body.description;
-//     equipment.loanedTo = req.body.loanedTo;
-//     equipment.available = req.body.available;
 
-//   equipment.save(function(err) {
-//     if (err) {
-//       throw err;
-//     }
-//     res.json(equipment);
-//   });
-// };
 
 controller.update = function(req, res) {
 };
 
 module.exports = controller;
 
-// var equipmentSchema = new mongoose.Schema({
-//   itemTitle     : String,
-//   serialNumber  : String,
-//   description   : String,
-//   loanedTo      : [ Person.schema ],
-//   available     : { type: Boolean, default: false }
-// });
