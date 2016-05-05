@@ -32,7 +32,7 @@ app.use(flash());
 
 app.use('/', router);
 app.use('/equipment', equipment_routes);
-app.use('/routes', person_routes);
+app.use('/person', person_routes);
 
 app.listen(port, function(){
   console.log("Listening on port " + port);
