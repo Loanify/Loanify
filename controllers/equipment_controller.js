@@ -79,7 +79,7 @@ controller.update = function(req, res) {
   var item = req.body.item;
   var email = req.body.email;
   var comment = req.body.comment;
-  var timeCheckedOut = req.body.timeCheckedOut;
+  // var timeCheckedOut = req.body.timeCheckedOut;
   // TODO update person information
   // get info from req.body
   Equipment.findOneAndUpdate(
@@ -89,8 +89,8 @@ controller.update = function(req, res) {
     lastName: lastName,
     item: item,
     email: email,
-    comments: comment,
-    timeCheckedOut: timeCheckedOut}},
+    comments: comment
+    }},
     function(err, equipment) {
     if (err) {
       throw err;
