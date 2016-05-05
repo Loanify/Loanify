@@ -25,9 +25,4 @@ router.route('/checkInCheckOut/:id')
 router.route('/:id/edit')
   .get(equipmentController.edit);
 
-// router.route('/:id')
-//   .get(linksController.show)
-//   .patch(linksController.update);
-
-
 module.exports = router;

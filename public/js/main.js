@@ -19,15 +19,11 @@ $.ajax({
     // append that to the td
 
 
-    tr.append($('<td>').text('Edit item').addClass('btn btn-warning btn-xs button'));
-    var $deletebutton = $('<td>').text('Delete').addClass('btn btn-danger btn-xs button');
-
-
     var b = $('<a>').text('Edit Item').attr( 'href', '/equipment/' + equipment._id +'/edit');
-    tr.append($('<td>').append(b).addClass('btn btn-warning btn-xs'));
+    tr.append($('<td>').append(b).addClass('btn btn-warning btn-xs button'));
 
 
-    var $deletebutton = $('<td>').text('Delete').addClass('btn btn-danger btn-xs');
+    var $deletebutton = $('<td>').text('Delete').addClass('btn btn-danger btn-xs button');
 
     tr.append($deletebutton);
     $deletebutton.on('click', function(){
