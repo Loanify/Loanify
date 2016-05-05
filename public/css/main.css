@@ -1,0 +1,19 @@
+.button {
+  margin: 5px;
+  width: 75px;
+}
+
+.logout {
+  float: right;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.equipment {
+  margin-bottom: 35px;
+}
+
+.home {
+  float: right;
+  display: inline-block;
+}

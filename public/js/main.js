@@ -10,14 +10,25 @@ $.ajax({
     tr.append($('<td>').text(equipment.serialNumber));
     tr.append($('<td>').text(equipment.description));
     tr.append($('<td>').text(equipment.available));
+
+
     var a = $('<a>').text('Show Item').attr( 'href', '/equipment/' + equipment._id);
-    tr.append($('<td>').append(a).addClass('btn btn-success btn-xs'));
+    tr.append($('<td>').append(a).addClass('btn btn-success btn-xs button'));
     // <td>show item</td>
     // make an anchor tag, set the text and href for it
     // append that to the td
 
-    tr.append($('<td>').text('Edit item').addClass('btn btn-warning btn-xs'));
+
+    tr.append($('<td>').text('Edit item').addClass('btn btn-warning btn-xs button'));
+    var $deletebutton = $('<td>').text('Delete').addClass('btn btn-danger btn-xs button');
+
+
+    var b = $('<a>').text('Edit Item').attr( 'href', '/equipment/' + equipment._id +'/edit');
+    tr.append($('<td>').append(b).addClass('btn btn-warning btn-xs'));
+
+
     var $deletebutton = $('<td>').text('Delete').addClass('btn btn-danger btn-xs');
+
     tr.append($deletebutton);
     $deletebutton.on('click', function(){
       console.log(equipment._id + "clicked");

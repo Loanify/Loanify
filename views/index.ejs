@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="/js/main.js"></script>
+
+  <link rel="stylesheet" href="/css/main.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -17,12 +20,14 @@
 
 <div class="container">
 
-  <h1>Welcome <%= user.username %></h1>
+<div>
+ <a href='/' class="home">Home</a>
+ <a href='/logout' class="logout">Logout</a>
+ </div>  <!-- <h1>Welcome <%= user.username %></h1> -->
   <!-- Username: <%= user.username %><br/> -->
-  <a href="/logout">Logout</a>
 
 
-  <h1>Equipment</h1>
+  <h1 class="equipment">Equipment</h1>
   <a href="/equipment/new">Add New Equipment here!</a>
   <table class="table table-hover">
       <thead>

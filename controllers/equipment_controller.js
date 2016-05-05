@@ -60,7 +60,29 @@ controller.destroy = function(req, res){
   //send back confirmation as JSON
 };
 
+
 controller.update = function(req, res) {
+  var id = req.params.id;
+  var itemTitle = req.body.itemTitle;
+  var serialNumber = req.body.serialNumber;
+  var description = req.body.description;
+
+  Equipment.findOneAndUpdate(
+    {_id: id},
+    { itemTitle: itemTitle,
+      serialNumber: serialNumber,
+      description: description,
+    },
+    function(err, equipment) {
+    if (err) {
+      throw err;
+    }
+      res.redirect('/index');
+  });
+};
+
+
+controller.checkOutCheckIn = function(req, res) {
   var id = req.params.id;
 
   Equipment.findById(id, function(err, equipment) {
@@ -89,7 +111,7 @@ controller.update = function(req, res) {
         if (err) {
           throw err;
         }
-          res.redirect('/index');
+          res.redirect('/email');
       });
 
     } else {
@@ -113,6 +135,17 @@ controller.update = function(req, res) {
     }
 });
 };
+
+controller.edit = function(req, res) {
+  Equipment.findById(req.params.id, function(err, equipment) {
+    if (err) {
+      throw err;
+    }
+    res.render('edit', {equipment: equipment});
+  });
+};
+
+
 
 module.exports = controller;
 
