@@ -15,7 +15,7 @@ var mailOptions = {
 
 $('#checkoutButton').on('click', function(){
   console.log("check me out")
-transporter.sendMail(mailOptions, function(error, info){
+  transporter.sendMail(mailOptions, function(error, info){
     if(error){
         return console.log(error);
     }

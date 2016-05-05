@@ -17,3 +17,13 @@
   float: right;
   display: inline-block;
 }
+
+.homeBackground {
+  background: black;
+  background-size: cover;
+}
+
+.overflow {
+  height: 300px;
+  overflow: scroll
+}
