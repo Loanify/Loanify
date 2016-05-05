@@ -19,6 +19,12 @@ router.route('/:id')
   .get(equipmentController.show)
   .post(equipmentController.update);
 
+router.route('/checkInCheckOut/:id')
+  .post(equipmentController.checkOutCheckIn);
+
+router.route('/:id/edit')
+  .get(equipmentController.edit);
+
 // router.route('/:id')
 //   .get(linksController.show)
 //   .patch(linksController.update);
