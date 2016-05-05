@@ -9,6 +9,11 @@ https://trello.com/b/M9OykCOz/loanify#
 ##Heroku
 https://ga-frontlines-loanify.herokuapp.com/
 
+##Installation
+* Fork over and git clone on your local.
+* Npm install nodemailer-smtp-transport
+* Npm install (installs all other )
+
 ##A README.md file with:
 * Explanations of the technologies used (including outside APIs).
 * A couple paragraphs about the general approach you took.
@@ -17,19 +22,18 @@ https://ga-frontlines-loanify.herokuapp.com/
 * Links to your planning docs, including data models, wireframes, and interview notes.
 * Descriptions of any unsolved problems or major hurdles your team had to overcome.
 
-* Technologies used
-    * Node.js
-    * Express
-    * 
+##Technologies used
+* Node.js
+* Express
 
-* Initial Start
-    * Started off with axure flow charts
-    * We then made our slack and trello board.
-    * Just added the user stories to trello.
-    * Then we tackled the schemas for our three models.
-    * Following that we researched node mailer and tried to understand
+##Initial Start
+* Started off with axure flow charts
+* We then made our slack and trello board.
+* Just added the user stories to trello.
+* Then we tackled the schemas for our three models.
+* Following that we researched node mailer and tried to understand
     how we would email students.
 
-* Unsolved Problems
-    * Heroku casuing some db issues.
-    
+##Unsolved Problems
+* Heroku casuing some db issues.
+
