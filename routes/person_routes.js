@@ -11,28 +11,8 @@ router.route('/')
 router.route('/new')
   .get(personController.new);
 
-// router.route('/:id')
-//   .get(personController.show)
-//   .patch(linksController.update);
 router.get('/:id')
   .get(personController.show)
   .post(personController.update);
 
 module.exports = router;
-
-
-// //posts urls inputs to our model
-// router.route('/index')
-//   .get(equipmentController.index);
-
-// router.route('/new')
-//   .get(equipmentController.new);
-
-// router.route('/')
-//   .post(equipmentController.create);
-
-// router.route('/:id')
-//   .delete(equipmentController.destroy)
-//   .get(equipmentController.show)
-//   .post(equipmentController.update);
-

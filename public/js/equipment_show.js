@@ -1,5 +1,4 @@
 
-
 // create reusable transporter object using the default SMTP transportvar transporter = nodemailer.createTransport('smtps://user%40gmail.com:pass@smtp.gmail.com');
 
 // setup e-mail data with unicode symbols
