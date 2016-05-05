@@ -1,6 +1,16 @@
 var express= require('express');
 var logger = require('morgan');
 var app = express();
+var nodemailer = require("nodemailer");
+var smtpTransport = require('nodemailer-smtp-transport');
+
+var smtpTransport = nodemailer.createTransport("SMTP",{
+    service: "Gmail",
+    auth: {
+        user: "philsinglewhitefemale@gmail.com",
+        pass: "philco123"
+    }
+});
 var port = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
@@ -33,6 +43,28 @@ app.use(flash());
 app.use('/', router);
 app.use('/equipment', equipment_routes);
 app.use('/person', person_routes);
+
+//nodemailer
+app.get('/email',function(req,res){
+res.render('email');
+});
+app.get('/send',function(req,res){
+  var mailOptions={
+   to : req.query.to,
+   subject : req.query.subject,
+   text : req.query.text
+  };
+  console.log(mailOptions);
+  smtpTransport.sendMail(mailOptions, function(error, response){
+  if(error){
+  console.log(error);
+  res.end("fuck");
+  }else{
+  console.log("Message sent: " + response.message);
+  res.end("sent");
+  }
+  });
+});
 
 app.listen(port, function(){
   console.log("Listening on port " + port);
