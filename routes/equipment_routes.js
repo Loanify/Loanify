@@ -17,5 +17,4 @@ router.route('/:id')
   .get(equipmentController.show)
   .post(equipmentController.update);
 
-
 module.exports = router;

@@ -7,6 +7,8 @@
  <script type="text/javascript" src="/js/equipment_show.js"></script>
  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" href="/css/main.css">
+
  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -14,10 +16,15 @@
 
 <div class="container">
 
+<div>
+ <a href='/' class="home">Home</a>
+ <a href='/logout' class="logout">Logout</a>
+ </div>
+
 
  <h1> Check out equipment </h1>
 
- <form action="/equipment/<%= equipment._id %>" method="post" class="form-horizontal">
+ <form action="/equipment/checkInCheckOut/<%= equipment._id %>" method="post" class="form-horizontal">
 
    <div class="form-group">
      <div class="col-sm-8">
@@ -54,8 +61,6 @@
    </div>
 
  </form>
-
- <a href='/index'>Back</a>
 
 </div>
 
