@@ -11,10 +11,13 @@ https://ga-frontlines-loanify.herokuapp.com/
 
 ##Installation
 * Fork over and git clone on your local.
-* Npm install nodemailer-smtp-transport
-* Npm install (installs all other )
+* Npm install.
+* In another tab, release the mongod.
+* In another tab, nodemon.
+* In browser, type Localhost:3000.
+* Then, give me a job.
 
-##A README.md file with:
+##TODO: A README.md file with:
 * Explanations of the technologies used (including outside APIs).
 * A couple paragraphs about the general approach you took.
 * Installation instructions for the app.
@@ -35,5 +38,6 @@ https://ga-frontlines-loanify.herokuapp.com/
     how we would email students.
 
 ##Unsolved Problems
-* Heroku casuing some db issues.
+* Heroku causing some db issues.
+* Open issues not resolved.
 
