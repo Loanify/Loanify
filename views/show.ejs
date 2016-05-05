@@ -14,7 +14,7 @@
   <div class="container">
     <h1><%= equipment.itemTitle %></h1>
     <p>Serial Number: <%= equipment.serialNumber %></p>
-    <p>Loaned to: <%= equipment.loanedTo %></p>
+    <p>Loaned to: <%= equipment.loanedTo.firstName %></p>
     <input class="btn btn-default" type="submit" value="Check Item In" id="checkinButton"/>
 </div>
 

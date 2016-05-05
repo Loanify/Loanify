@@ -1,5 +1,6 @@
 var Person = require('../models/person.js');
 var controller = {};
+Equipment = require('../models/equipment_model.js')
 
 controller.index = function(req, res) {
   Person.find({}, function(err, person) {
@@ -20,12 +21,12 @@ controller.new = function(req, res) {
 controller.create = function(req, res) {
 
   var person = new Person({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    item: req.body.item,
-    email: req.body.email,
-    comment: req.body.comment,
-    timeCheckedOut: req.body.timeCheckedOut
+    firstName: req.body.personSchema.firstName,
+    lastName: req.body.personSchema.lastName,
+    item: req.body.personSchema.item,
+    email: req.body.personSchema.email,
+    comment: req.body.personSchema.comment,
+    timeCheckedOut: req.body.personSchema.timeCheckedOut
   });
 
 
@@ -33,6 +34,7 @@ controller.create = function(req, res) {
     if (err) throw err;
     res.redirect('/');
   });
+
 };
 
 // controller.create = function(req, res) {
