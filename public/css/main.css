@@ -1,0 +1,13 @@
+.btn {
+  margin: 5px;
+  width: 75px;
+}
+
+#logout {
+  float: right;
+  margin: 10px;
+}
+
+.equipment {
+  margin-bottom: 35px;
+}
