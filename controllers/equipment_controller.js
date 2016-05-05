@@ -47,18 +47,8 @@ controller.create = function(req, res) {
 
 controller.destroy = function(req, res){
   var id = req.params.id;
-  var firstName = req.body.loanedTo.firstName;
-  var lasttName = req.body.loanedTo.lastName;
-  var item = req.body.loanedTo.item;
-  var email = req.body.loanedTo.email;
-  var comment = req.body.loanedTo.comment;
-  var timeCheckedOut = req.body.loanedTo.timeCheckedOut;
-
-
   console.log(req.body, req.params);
-  Equipment.findOneAndRemove({_id: id}, {firstname: firstName}, {lastName: lastName},
-    {item: item}, {email: email}, {comment: comment}, {timeCheckedOut: timeCheckedOut},
-    function(err, doc, result){
+  Equipment.findOneAndRemove({_id: id}, function(err, doc, result){
     if (err){
       console.log(err);
     }
