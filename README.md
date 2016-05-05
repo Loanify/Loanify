@@ -6,6 +6,9 @@ https://github.com/Loanify/Loanify
 ##Trello
 https://trello.com/b/M9OykCOz/loanify#
 
+##Heroku
+https://ga-frontlines-loanify.herokuapp.com/
+
 ##A README.md file with:
 * Explanations of the technologies used (including outside APIs).
 * A couple paragraphs about the general approach you took.
@@ -24,8 +27,9 @@ https://trello.com/b/M9OykCOz/loanify#
     * We then made our slack and trello board.
     * Just added the user stories to trello.
     * Then we tackled the schemas for our three models.
-    * Following that we researched node mailer and tried to understanding
+    * Following that we researched node mailer and tried to understand
     how we would email students.
 
 * Unsolved Problems
-    * Too soon
+    * Heroku casuing some db issues.
+    
