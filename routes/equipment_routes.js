@@ -12,6 +12,7 @@ router.route('/new')
   .get(equipmentController.new);
 
 router.route('/')
+  .get(equipmentController.index)
   .post(equipmentController.create);
 
 router.route('/:id')

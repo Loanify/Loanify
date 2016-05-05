@@ -58,7 +58,7 @@ app.get('/send',function(req,res){
   smtpTransport.sendMail(mailOptions, function(error, response){
   if(error){
   console.log(error);
-  res.end("fuck");
+  res.end("try again, maybe npm install. noob");
   }else{
   console.log("Message sent: " + response.message);
   res.end("sent");
