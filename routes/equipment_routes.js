@@ -5,6 +5,9 @@ var equipmentController = require('../controllers/equipment_controller.js');
 console.log(equipmentController);
 
 //posts urls inputs to our model
+router.route('/index')
+  .get(equipmentController.index);
+
 router.route('/new')
   .get(equipmentController.new);
 
