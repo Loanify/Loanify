@@ -18,7 +18,7 @@
     <p>Email: <%= equipment.loanedTo.email %></p>
     <p>Checked out at: <%= equipment.loanedTo.timeCheckedOut %></p>
 
- <form action="/equipment/<%= equipment._id %>" method="post" class="form-horizontal">
+ <form action="/equipment/checkInCheckOut/<%= equipment._id %>" method="post" class="form-horizontal">
     <div class="form-group">
        <div class="col-sm-8">
          <input class="btn btn-default" type="submit" value="Check In"/>
