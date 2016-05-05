@@ -1,4 +1,3 @@
-
 $.ajax({
   url: '/equipment/index'
   })
@@ -21,19 +20,19 @@ $.ajax({
     var $deletebutton = $('<td>').text('Delete').addClass('btn btn-danger btn-xs');
     tr.append($deletebutton);
     $deletebutton.on('click', function(){
-      console.log(equipment._id + "clicked")
+      console.log(equipment._id + "clicked");
       $.ajax({
         url: '/equipment/' + equipment._id,
         method: 'DELETE',
         success: function(){
-          console.log("deleted")
+          console.log("deleted");
           tr.remove();
         }
-      })
+      });
 
-    })
+    });
   $('tbody').append(tr);
-  })
+  });
 });
 
 

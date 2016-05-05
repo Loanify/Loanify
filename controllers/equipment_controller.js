@@ -63,40 +63,65 @@ controller.destroy = function(req, res){
       console.log(err);
     }
     console.log(err, doc, result);
-    res.json({status: "deleted"})
+    res.json({status: "deleted"});
   });
   //find equipment to delete via ID
   //delete item
   //send back confirmation as JSON
-}
-
-
+};
 
 controller.update = function(req, res) {
   var id = req.params.id;
-  var firstName = req.body.firstName;
-  var lastName = req.body.lastName;
-  var item = req.body.item;
-  var email = req.body.email;
-  var comment = req.body.comment;
-  // var timeCheckedOut = req.body.timeCheckedOut;
-  // TODO update person information
-  // get info from req.body
-  Equipment.findOneAndUpdate(
-    {_id: id},
-    {available: false,
-    loanedTo: {firstName: firstName,
-    lastName: lastName,
-    item: item,
-    email: email,
-    comments: comment
-    }},
-    function(err, equipment) {
+
+  Equipment.findById(id, function(err, equipment) {
     if (err) {
       throw err;
     }
-      res.redirect('/index');
-  });
+    if (equipment.available) {
+
+      var firstName = req.body.firstName;
+      var lastName = req.body.lastName;
+      var item = req.body.item;
+      var email = req.body.email;
+      var comment = req.body.comment;
+
+      Equipment.findOneAndUpdate(
+        {_id: id},
+        {available: false,
+        loanedTo: {
+          firstName: firstName,
+          lastName: lastName,
+          item: item,
+          email: email,
+          comments: comment
+        }},
+        function(err, equipment) {
+        if (err) {
+          throw err;
+        }
+          res.redirect('/index');
+      });
+
+    } else {
+
+      Equipment.findOneAndUpdate(
+        {_id: id},
+        {available: true,
+        loanedTo: {
+          firstName: "",
+          lastName: "",
+          item: "",
+          email: "",
+          comments: ""
+        }},
+        function(err, equipment) {
+        if (err) {
+          throw err;
+        }
+          res.redirect('/index');
+      });
+    }
+});
 };
 
 module.exports = controller;
