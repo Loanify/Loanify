@@ -30,10 +30,10 @@
   <div class="container">
 
     <h1><%= equipment.itemTitle %></h1>
-    <p>Serial Number: <%= equipment.serialNumber %></p>
-    <p>Loaned to: <%= equipment.loanedTo.firstName %> <%=equipment.loanedTo.lastName%></p>
-    <p>Email: <%= equipment.loanedTo.email %></p>
-    <p>Checked out at: <%= equipment.loanedTo.timeCheckedOut %></p>
+    <p><strong>Serial Number:</strong> <%= equipment.serialNumber %></p>
+    <p><strong>Loaned to:</strong> <%= equipment.loanedTo.firstName %> <%=equipment.loanedTo.lastName%></p>
+    <p><strong>Email:</strong> <%= equipment.loanedTo.email %></p>
+    <p><strong>Checked out at:</strong> <%= equipment.loanedTo.timeCheckedOut %></p>
 
  <form action="/equipment/checkInCheckOut/<%= equipment._id %>" method="post" class="form-horizontal">
     <div class="form-group">
