@@ -17,3 +17,8 @@
   float: right;
   display: inline-block;
 }
+
+.homeBackground {
+  background: black;
+  background-size: cover;
+}
