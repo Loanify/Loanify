@@ -27,7 +27,7 @@ https://ga-frontlines-loanify.herokuapp.com/
 * Bootstrap
 * Morgan
 * Body-parser
-* bcrypt
+* Bcrypt
 * Cookie-parser
 * Express-session
 * Mongoose
@@ -39,10 +39,12 @@ https://ga-frontlines-loanify.herokuapp.com/
 ##Initial Start
 * Started off with axure flow charts
 * We then made our slack and trello board.
-* Just added the user stories to trello.
+* Added the user stories to trello.
+* Then came wire framing.
 * Then we tackled the schemas for our three models.
 * Following that we researched node mailer and tried to understand
   how we would email students.
+* Then we delegated work and progressed thru user stories.
 * We then celebrated.
 
 ##Aproach
@@ -52,16 +54,14 @@ overal approach we would take to merge our branches into master origin. Why? Bec
 that same day we hit our first merge conflict.
 
 The rest of the week was spent tackling features and splitting up work amongst eachother.
-We got close to mvp on Wednesday, but ultimately reach mvp the next day. Whenever we hit a problem
-or merge conflict, we handled it immediately. Finally, we managed to stay together as a team and take care of the user stories, and created an app that we feel answered the problems
-each user story needed resolved.
+We got close to mvp on Wednesday, but ultimately reached mvp the next day. Whenever we hit a problem or merge conflict, we handled it immediately. Finally, we managed to stay together as a team and take care of the user stories, ultimately creating an app that we feel answered the problems each user story needed resolved.
 
 ##Unsolved Problems and Hurdles
 * Hurdles
     * Nodemailer
     * Chron
     * Translating to Heroku.
-    * Team projects introduce a whole new set of challenges.
+    * Adjusting to working as a team.
     * Github and merge conflicts.
 * Unsolved Problems
     * 1 open Github issue regarding email verification in the form field. 
