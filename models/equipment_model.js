@@ -6,11 +6,10 @@ var equipmentSchema = new mongoose.Schema({
   serialNumber  : String,
   description   : String,
   loanedTo      : {
-    firstName     : String,
-    lastName      : String,
-    item          : String,
-    email         : String,
-    comments      : String,
+    firstName     : { type: String, default: 'none'},
+    lastName      : { type: String, default: 'none'},
+    email         : { type: String, default: 'none'},
+    comments      : { type: String, default: 'none'},
     timeCheckedOut: { type : Date, default: Date.now }
   },
   available     : { type: Boolean, default: true }

@@ -28,6 +28,10 @@ https://ga-frontlines-loanify.herokuapp.com/
 ##Technologies used
 * Node.js
 * Express
+* Bootstrap
+* Node Mailer
+* Mongo
+* Mongoose
 
 ##Initial Start
 * Started off with axure flow charts
