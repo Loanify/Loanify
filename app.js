@@ -84,11 +84,11 @@ function checkForAndSendEmails() {
     .then(function(emails){
       emails.forEach(function(email){
         sendEmail(email);
-      })
+      });
     })
     .catch(function(err){
       console.log(err);
-    })
+    });
 }
 
 // returns a thenable promise
@@ -99,7 +99,7 @@ function getAvailableEmails() {
       return equipments.map(function(equipment) {
         return equipment.loanedTo.email;
       });
-    })
+    });
 }
 function sendEmail(to){
   var nodemailer = require("nodemailer");

@@ -4,40 +4,89 @@
   <title></title>
 
   <title>Mail the Loanee here!!!</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><script>// <![CDATA[
-
-$(document).ready(function(){
-    var from,to,subject,text;
-    $("#send_email").click(function(){
-        to=$("#to").val();
-        subject=$("#subject").val();
-        text=$("#content").val();
-        $("#message").text("Sending E-mail...Please wait");
-        $.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
-        if(data=="sent")
-        {
-          $("#message").empty().html("Email is been sent at "+to+" . Please check inbox !");
-        }
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><script>// <![CDATA[
+    $(document).ready(function(){
+        var from,to,subject,text;
+        $("#send_email").click(function(){
+            to=$("#to").val();
+            subject=$("#subject").val();
+            text=$("#content").val();
+            $("#message").text("Sending E-mail...Please wait");
+            $.get("/send",{to:to,subject:subject,text:text},function(data){
+            if(data=="sent")
+            {
+              $("#message").empty().html("Email is been sent at "+to+" . Please check inbox !");
+            }
+          });
+        });
       });
-    });
-  });
   </script>
+  <script type="text/javascript" src="/js/equipment_new.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
+
 <body>
 
 
-  <div id="container">
-    <div></div>
-    Mail the Loanee here!!!
-    <div>
-    <h1>Enter Email</h1>
-    <input id="to" type="text" placeholder="Enter E-mail ID where you want to send" />
-    <input id="subject" type="text" placeholder="Write Subject" />
-    <textarea id="content" cols="40" rows="5" placeholder="Write what you want to send"></textarea>
-    <button id="send_email">Send Email</button>
-    <span id="message"></span>
-  </div>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="">
+          <img alt="Brand" src="https://ga-cms-production-herokuapp-com.global.ssl.fastly.net/assets/ga-lockup-e7ca2ce7bf63573ee4ffb09b031e2ce0.png" style="width: 175px; border-radius: 2px">
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href='/'>Home</a></li>
+          <li><a href='/logout'>Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<!--
+      <input id="to" type="text" placeholder="Enter E-mail ID where you want to send" />
+      <input id="subject" type="text" placeholder="Write Subject" />
+      <textarea id="content" cols="40" rows="5" placeholder="Write what you want to send"></textarea>
+      <button id="send_email">Send Email</button>
+      <span id="message"></span>
+ -->
+
+<div class="container">
+
+  <h1>Email Entry Form</h1>
+  <br>
+  <form>
+
+    <div class="form-group row">
+      <label for="emailLabel" class="col-sm-2 form-control-label">Email Address</label>
+      <div class="col-sm-8">
+        <input id="to" type="text" placeholder="Enter E-mail">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="serialNumberLabel" class="col-sm-2 form-control-label">Subject</label>
+      <div class="col-sm-8">
+        <input id="subject" type="text" placeholder="Write Subject">
+      </div>
+    </div>
+
+     <div class="form-group row">
+      <label for="descriptionLabel" class="col-sm-2 form-control-label">Message</label>
+      <div class="col-sm-8">
+        <textarea id="content" cols="40" rows="5" placeholder="Email body"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button id="send_email" class="btn btn-primary"><a href="/index" style="color: white">Send Email!</a></button>
+      </div>
+    </div>
+
+</div>
 
 </body>
 </html>

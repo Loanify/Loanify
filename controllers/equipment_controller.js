@@ -1,5 +1,6 @@
 var Equipment = require('../models/equipment_model.js');
 var controller = {};
+var nodemailer
 
 controller.index = function(req, res) {
   Equipment.find({}, function(err, equipment) {
