@@ -104,7 +104,6 @@ controller.checkOutCheckIn = function(req, res) {
         loanedTo: {
           firstName: firstName,
           lastName: lastName,
-          item: item,
           email: email,
           comments: comment
         }},
@@ -121,11 +120,10 @@ controller.checkOutCheckIn = function(req, res) {
         {_id: id},
         {available: true,
         loanedTo: {
-          firstName: "",
-          lastName: "",
-          item: "",
-          email: "",
-          comments: ""
+          firstName: 'none',
+          lastName: 'none',
+          email: 'none',
+          comments: 'none'
         }},
         function(err, equipment) {
         if (err) {
