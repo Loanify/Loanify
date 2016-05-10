@@ -68,55 +68,53 @@ app.get('/send',function(req,res){
   });
 });
 
+// seconds, minutes, hours, days, months, ye
 var job = new CronJob({
-  cronTime: '00 47 18 * * 1-5',
-  onTick: function() {
-    var nodemailer = require("nodemailer"),
-      transport = nodemailer.createTransport('direct', {
-        debug: true, //this!!!
-  });
-
-      transport.sendMail({
-        from: "Fred Foo <foo@blurdybloop.com>", // sender address
-        // put new array here
-        to: function() {
-          notAvailable.forEach(function(na) {
-
-          });
-        }, // list of receivers
-        subject: "Hello", // Subject line
-        text: "Hey DICKHEAD", // plaintext body
-        html: "<b>GIVE US BACK OUR EQUIPMENT OR YOUR FUCKED</b>" // html body
-    }, console.error);
-  },
+  cronTime: '00 00 18 * * 1-5',
+  onTick: checkForAndSendEmails,
   start: true,
   timeZone: 'America/Los_Angeles'
 });
+job.start();
 
-//set interval
-var notAvailable = [];
 
-var emailRemind = function() {
-  Equipment.find({}, function(err, equipment){
-  console.log(equipment);
-    if (err) {
-      throw err;
-    } else {
-      for (var i = 0; i < equipment.length; i++) {
-        if (equipment[i].loanedTo.email !== "none") {
-            console.log(equipment[i].loanedTo.email);
-            notAvailable.push(equipment[i].loanedTo.email);
-            console.log(notAvailable);
-          job.start();
-          }
-        }
-      }
-    }
+function checkForAndSendEmails() {
+  // find all unavailable equipment
+  getAvailableEmails()
+    .then(function(emails){
+      emails.forEach(function(email){
+        sendEmail(email);
+      })
+    })
+    .catch(function(err){
+      console.log(err);
+    })
+}
 
-  );
-};
-emailRemind();
-
+// returns a thenable promise
+function getAvailableEmails() {
+  return Equipment.find({available: false})
+    .then(function(equipments){
+      // return the array of emails
+      return equipments.map(function(equipment) {
+        return equipment.loanedTo.email;
+      });
+    })
+}
+function sendEmail(to){
+  var nodemailer = require("nodemailer");
+  var transport = nodemailer.createTransport('direct', {
+    debug: true, //this!!!
+  });
+  transport.sendMail({
+    from: "Fred Foo <foo@blurdybloop.com>", // sender address
+    // put new array here
+    to: to,
+    subject: "Hello", // Subject line
+    text: "Hey DICKHEAD", // plaintext body
+    html: "<b>GIVE US BACK OUR EQUIPMENT OR YOUR FUCKED</b>" // html body
+  }, console.error);
+}
 
 app.listen(port, function(){
   console.log("Listening on port " + port);
